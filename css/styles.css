@@ -1,7 +1,7 @@
 *,
 ::before,
 ::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /**********************************/
@@ -20,91 +20,133 @@
 /* 0. Variáveis
 /**********************************/
 
-[data-theme="light"] {
-	--clr-background:#F5F5F5;
-	--clr-font:#111111;
-    --clr-card:#FEE7E7;
-    --clr-switch-track:#AABBCC;
-    --clr-link:#3333FF;
+[data-theme='light'] {
+  --clr-background: #f5f5f5;
+  --clr-font: #111111;
+  --clr-card: #fee7e7;
+  --clr-switch-track: #aabbcc;
+  --clr-link: #3333ff;
 
-    --clr-confirmed:#D21212;
-    --clr-deaths:#223344;
-    --clr-vaccinated-1:#0000C7;
-    --clr-vaccinated-2:#117711;
+  --clr-confirmed: #d21212;
+  --clr-deaths: #223344;
+  --clr-vaccinated-1: #0000c7;
+  --clr-vaccinated-2: #117711;
 
-	--ff: "Cairo", sans-serif;
-    --ts-caption: 600 1.8rem/1 var(--ff);
-    --ts-normal-text: 400 1.6rem/1.4 var(--ff);
-    --ts-normal-semibold: 600 1.6rem/1.4 var(--ff);
+  --ff: 'Cairo', sans-serif;
+  --ts-caption: 600 1.8rem/1 var(--ff);
+  --ts-normal-text: 400 1.6rem/1.4 var(--ff);
+  --ts-normal-semibold: 600 1.6rem/1.4 var(--ff);
 
-    --transition: all 0.2s linear;
-    --shadow-card: 5px 5px 30px 0 rgba(51, 51, 51, 20%);
+  --transition: all 0.2s linear;
+  --shadow-card: 5px 5px 30px 0 rgba(51, 51, 51, 20%);
 }
 
-[data-theme="dark"] {
-	--clr-background:#111111;
-	--clr-font:#F5F5F5;
-    --clr-card:#1A1A1A;
-    --clr-switch-track:#AABBCC;
-    --clr-link:#C2C2FF;
+[data-theme='dark'] {
+  --clr-background: #111111;
+  --clr-font: #f5f5f5;
+  --clr-card: #1a1a1a;
+  --clr-switch-track: #aabbcc;
+  --clr-link: #c2c2ff;
 
-    --clr-confirmed:#FF3333;
-    --clr-deaths:#AABBCC;
-    --clr-vaccinated-1:#6666DD;
-    --clr-vaccinated-2:#44BB44;
-    
-	--ff: "Cairo", sans-serif;
-    --ts-caption: 600 1.8rem/1 var(--ff);
-    --ts-normal-text: 400 1.6rem/1.4 var(--ff);
-    --ts-normal-semibold: 600 1.6rem/1.4 var(--ff);
+  --clr-confirmed: #ff3333;
+  --clr-deaths: #aabbcc;
+  --clr-vaccinated-1: #6666dd;
+  --clr-vaccinated-2: #44bb44;
 
-    --transition: all 0.2s linear;
-    --shadow-card: 5px 5px 30px 0 rgba(221, 221, 221, 5%);
+  --ff: 'Cairo', sans-serif;
+  --ts-caption: 600 1.8rem/1 var(--ff);
+  --ts-normal-text: 400 1.6rem/1.4 var(--ff);
+  --ts-normal-semibold: 600 1.6rem/1.4 var(--ff);
+
+  --transition: all 0.2s linear;
+  --shadow-card: 5px 5px 30px 0 rgba(221, 221, 221, 5%);
 }
 
 /**********************************/
 /* 1. Estilos gerais
 /**********************************/
 
-
-
+html {
+  font-size: 62.5%;
+  font-family: var(--ff); /* cairo */
+  color: var(--clr-font);
+  transition: var(--transition);
+}
+body {
+  background-color: var(--clr-background);
+  transition: var(--transition);
+}
 /**********************************/
 /* 2. Navbar
 /**********************************/
 
+.navbar {
+  background-color: var(--clr-card);
+  transition: var(--transition);
+  min-height: 8.5rem;
+  padding: 1.6rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.logo {
+  fill: var(--clr-font);
+  transition: var(--transition);
+}
 
+.switch {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+.switch__track {
+  background-color: var(--clr-switch-track);
+  display: block;
+  height: 2rem;
+  width: 4rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin: 0 0.7rem;
+}
+
+.switch__track::before {
+  content: '';
+  background-color: var(--clr-font);
+  transition: var(--transition);
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  position: relative; /* consiga mover */
+  left: 0;
+}
+
+.switch__track--dark::before {
+  left: 2rem;
+}
 /**********************************/
 /* 3. Loading
 /**********************************/
-
-
 
 /**********************************/
 /* 4. Container
 /**********************************/
 
-
-
 /**********************************/
 /* 5. State Select
 /**********************************/
-
-
 
 /**********************************/
 /* 6. Status
 /**********************************/
 
-
-
 /**********************************/
 /* 7. Data Box
 /**********************************/
 
-
-
 /**********************************/
 /* 8. Footer
 /**********************************/
-
