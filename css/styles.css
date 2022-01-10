@@ -130,7 +130,33 @@ body {
 /**********************************/
 /* 3. Loading
 /**********************************/
+.loading {
+  position: fixed; /* relativo a viewport */
+  background-color: var(--clr-background);
+  transition: var(--transition);
+  width: 100vw;
+  height: 100vh;
+  font-size: 4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
 
+.loading__spinner {
+    animation: spin 2s infinite linear;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.loading--hide {
+    visibility: hidden; /* oculta e nao permite o usuario clicar nele */
+    opacity: 0; /* oculto mas pode ser clicado */
+    
+}
 /**********************************/
 /* 4. Container
 /**********************************/
