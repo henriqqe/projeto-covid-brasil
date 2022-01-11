@@ -83,6 +83,23 @@ section {
   padding: 1.6rem;
   border-radius: 1rem;
 }
+
+footer {
+  background-color: var(--clr-card);
+  transition: var(--transition);
+  font: var(--ts-normal-semibold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 19rem;
+  text-align: center;
+}
+
+a {
+  color: var(--clr-link);
+  text-decoration: none;
+  transition: var(--transition);
+}
 /**********************************/
 /* 2. Navbar
 /**********************************/
@@ -172,6 +189,18 @@ section {
   grid-gap: 30px; /* distancia entre as linhas e coluna do grid */
   margin: 3rem 1.6rem;
 }
+
+@media screen and (min-width: 960px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr); /* (1fr 1fr)representa uma fraçao do espaço disponivel no grid container */
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 /**********************************/
 /* 5. State Select
 /**********************************/
@@ -249,6 +278,18 @@ section {
 .state-select-list__item--hide {
   display: none; /*  */
 }
+
+@media screen and (min-width: 960px) {
+  .state-select {
+    grid-column: 1 / -1; /* especifica o tamanho e a localizaçao de um grid item */ /* grid-column-start e grid-column-end */
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .state-select {
+    grid-column: 1; /* o bloco deve ocupar apenas 1 coluna do nosso grid container */
+  }
+}
 /**********************************/
 /* 6. Status
 /**********************************/
@@ -284,10 +325,44 @@ section {
   color: var(--clr-vaccinated-2);
   transition: var(--transition);
 }
+
+@media screen and (min-width: 1170px) {
+  .status:nth-of-type(1) {
+    grid-column: 1;
+  }
+}
 /**********************************/
 /* 7. Data Box
 /**********************************/
+.data-box__header {
+  font: var(--ts-caption);
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
 
+.data-box__description {
+  font: var(--ts-normal-text);
+}
+
+@media screen and (min-width: 960px) {
+  .data-box--30 {
+    grid-column: span 2; /* o bloco deve se expandir para ocupar duas colunas do grid container */
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .data-box--30 {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+
+  .data-box--deaths, .data-box--confirmed, .data-box--vaccinated-abs, .data-box--vaccinated-day {
+    grid-column: span 2;
+  }
+}
 /**********************************/
 /* 8. Footer
 /**********************************/
+.footer-text__source {
+  margin-bottom: 3.2rem;
+}

@@ -12,7 +12,7 @@ const _elements = {
     deathsDescription: document.querySelector(".data-box__description"),
     vaccinated1: document.querySelector(".info__total--vaccinated-1"),
     vaccinated2: document.querySelector(".info__total--vaccinated-2"),
-}
+} /* referencias de alguns elementos html */
 
 const _data = {
     id: "brasil=true",
@@ -20,16 +20,26 @@ const _data = {
     vaccinated: undefined,
     confirmed: undefined,
     deaths: undefined,
-}
+} /* contem as variaveis globais do nosso projeto */
 
-const _charts = {};
+const _charts = {}; /* vai armazenar os graficos do nosso dashboard */
 
 _elements.switch.addEventListener("click", () => {
+    const isDark = _elements.switch.classList.toggle("switch__track--dark");
+    
+    if(isDark)
+        document.documentElement.setAttribute("data-theme", "dark");
+    else 
+        document.documentElement.setAttribute("data-theme", "light")
+    /* html */
+
 
 });
 
 _elements.stateSelectToggle.addEventListener("click", () => {
+    _elements.selectToggleIcon.classList.toggle("state-select-toggle__icon--rotate");
 
+    _elements.selectList.classList.toggle("state-select-list--show");
 });
 
 _elements.selectOptions.forEach(item => {
